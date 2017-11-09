@@ -18,6 +18,7 @@ var minimalSlide = {
   // animation: holds the setInterval call
   // controlBackgroundColor:
   // controlActiveColor:
+  // currentControlColor: returns the color within the controlColor attribute
 
   setupControls: function() {
     // add controls based on the amount of slides
@@ -27,10 +28,18 @@ var minimalSlide = {
       $ul.append('<li></li>');
     }
     this.controls = $ul.children('li');
-    this.controls.first().addClass('control-active');
+    this.controls
+      .first()
+      .addClass('control-active')
+      .css('backgroundColor', this.currentControlColor());
     this.toggle = $('.mSToggle');
     this.changeSlideOnControlClick();
     this.toggleSlideshowOnButtonClick();
+  },
+
+  currentControlColor: function() {
+    return this.activeSlide()
+      .attr('controlColor');
   },
 
   changeSlideOnControlClick: function() {
@@ -83,8 +92,10 @@ var minimalSlide = {
   updateActiveControl: function(index) {
     this.controls
       .removeClass('control-active')
+      .css('backgroundColor', 'white')
       .eq(index)
-      .addClass('control-active');
+      .addClass('control-active')
+      .css('backgroundColor', this.currentControlColor());
   },
 
   nextSlide: function() {
