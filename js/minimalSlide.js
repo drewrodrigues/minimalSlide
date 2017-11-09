@@ -28,24 +28,33 @@ var minimalSlide = {
     }
     this.controls = $ul.children('li');
     this.controls.first().addClass('control-active');
+    this.toggle = $('.mSToggle');
     this.changeSlideOnControlClick();
     this.toggleSlideshowOnButtonClick();
   },
 
   changeSlideOnControlClick: function() {
+    self = this;
     this.controls.on('click', function() {
-      this.nextSlide();
+      self.stopSlideshow();
+      self.goToSlide($(this).index() - 1);
     });
   },
 
   toggleSlideshowOnButtonClick: function() {
-
+    self = this;
+    this.toggle.on('click', function() {
+      var text = $(this).text();
+      if (text === 'Pause') {
+        self.stopSlideshow();
+      } else {
+        self.startSlideshow();
+      }
+    });
   },
 
   setupSlides: function() {
     this.slides = $('.mS');
-    // automatically set the background-image to
-    // 0.jpg - n.jpg (however many .mS)
     this.slides
         .first()
         .addClass('active')
@@ -100,12 +109,14 @@ var minimalSlide = {
 
   startSlideshow: function() {
     var self = this;
+    this.toggle.text('Pause');
     this.animate = setInterval(function() {
       self.nextSlide();
     }, 5000);
   },
 
   stopSlideshow: function() {
+    this.toggle.text('Start');
     clearInterval(this.animate);
   },
 
@@ -142,39 +153,7 @@ var minimalSlide = {
 
 minimalSlide.setup();
 
-$(window).on('load', function() {
-  console.log('loaded');
-  console.log(self);
-});
 
-// $(function() {
-//
-//
-//
-//
-//
-//
-//     var slideSwitch = function($sections, $controls) {
-//         if ($sections.filter('.active').index() === $sections.length) {
-//             $sections
-//                 .removeClass('active')
-//                 .first()
-//                 .addClass('active')
-//                 .fadeIn(1000, function() {
-//                     $sections.show()
-//                 });
-//             updateActiveControl($controls, 0)
-//         } else {
-//             var currentIndex = $sections.filter('.active').index();
-//             $sections
-//                 .filter('.active')
-//                 .removeClass('active')
-//                 .fadeOut(1000)
-//                 .next()
-//                 .addClass('active');
-//             updateActiveControl($controls, currentIndex);
-//         }
-//     };
 //
 //     // change slide when control clicked
 //     $controls.on('click', function() {
