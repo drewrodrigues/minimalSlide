@@ -56,14 +56,10 @@ var minimalSlide = {
   setupSlides: function() {
     this.slides = $('.mS');
     this.slides
-        .first()
-        .addClass('active')
-        .end()
-        .each(function(index) {
-          $(this).css({
-            zIndex: -index - 1
-          });
-        });
+      .hide()
+      .first()
+      .addClass('active')
+      .fadeIn();
     this.slidesCount = this.slides.length;
   },
 
@@ -121,20 +117,12 @@ var minimalSlide = {
   },
 
   goToSlide: function(index) {
-    var self = this;
+    self = this;
     this.changeActiveSlideTo(index);
+    this.activeSlide().fadeIn(1000, function() {
+      self.slides.not('.active').hide();
+    });
     this.updateActiveControl(index);
-    if (index === 0) {
-      this.slides
-        .first()
-        .fadeIn(function() {
-          self.slides.fadeIn();
-        }); // so all don't fade in at the same time
-    } else {
-      this.slides
-        .filter(':lt(' + index + ')')
-        .fadeOut();
-    }
   },
 
   changeActiveSlideTo: function(index) {

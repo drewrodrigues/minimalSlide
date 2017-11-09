@@ -34,6 +34,11 @@ nav {
 .mS {
   color: white;
   padding: 50px 20px;
+  z-index: -1;
+}
+
+.mS.active {
+  z-index: 0;
 }
 
 h2 {
