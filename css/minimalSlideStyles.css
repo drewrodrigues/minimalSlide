@@ -17,15 +17,19 @@
 	overflow: hidden;
 }
 
-.mSSlide {
-	z-index: -1;
-}
 .mSSlide.active {
-	z-index: 0;
+	z-index: 2
 }
+
+.mSSlideContent {
+	z-index: 1;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
 .mSSlideImage {
 	width: 100%;
-	z-index: -10;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -40,6 +44,7 @@
 	text-align: center;
 	padding: 5px;
 	background: linear-gradient(0deg, black, rgba(255,255,255,0.0));
+	z-index: 10;
 }
 
 .mSToggle {
