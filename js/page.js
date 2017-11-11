@@ -1,9 +1,9 @@
-$docBodies = $('.documentation .body');
-$docTitle = $('.documentation .title');
+$docBodies = $('.versions .body');
+$docTitle = $('.versions .title');
 $docTitle.prepend('<span class="indicator">+</span>');
 $docBodies.hide();
 
-$('.documentation .title').on('click', function() {
+$('.versions .title').on('click', function() {
 	$this = $(this);
 	$indicator = $this.children('.indicator');
 	$this.next().slideToggle();

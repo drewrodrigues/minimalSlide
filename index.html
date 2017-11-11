@@ -65,10 +65,60 @@
 		<div class="container">
 			<div class="documentation">
 				<section>
-					<header class="title">
+<header class="orange">Basic Structure</header>
+<pre><code class="html">
+&lt;!-- 
+Adding the controlColor="&lt;Whatever color&gt;" attibute is optional 
+If not set, it will automatically be the default, which is light grey, unless defined otherwise in js.
+--&gt;
+
+&lt;div class="mSContainer"&gt;
+ 	&lt;section class="mSSlide" controlColor="red"&gt;
+		&lt;!-- add text/content here --&gt;
+		&lt;img src="img/7.jpg" class="mSSlideImage"&gt;
+	&lt;section&gt;
+	&lt;section class="mSSlide" controlColor="#333"&gt;
+		&lt;!-- add text/content here --&gt;
+		&lt;img src="img/8.jpg" class="mSSlideImage"&gt;
+	&lt;section&gt;
+	&lt;section class="mSSlide" controlColor="rgb(255,212,50)"&gt;
+		&lt;!-- add text/content here --&gt;
+		&lt;img src="img/9.jpg" class="mSSlideImage"&gt;
+	&lt;section&gt;
+&lt;/div&gt;
+
+&lt;script src="js/minimalSlide.js"&gt;
+</code></pre>
+<header class="blue">Optional Settings</header>
+<pre><code class="js">
+// js/minimalSlide.js
+
+// all of these are settings you can change, if you would like
+
+// stops slide show from starting automatically on load, it will start paused
+ms.autoPlay = false;
+
+// amount of time until next slide shown 
+ms.delayTime = 5000;
+
+// amount of time it takes for the new slide to fade in
+ms.transitionTime = 1000;
+
+// remove control background gradient
+ms.controlGradient = false;
+
+// sets the default color of the controls. Which will be over written
+// if the controlColor attribute is set on the slide in HTML
+ms.controlColorDefault = "red";
+</code></pre>
+			</div>
+			<div class="versions">
+				<section>	
+					<header class="title pink">
 						<h3>Version 0.2</h3>
 					</header>
 					<div class="body">
+						<p class="date">11/11/2017</p>
 						<ul class="complete">
 							<header>Complete</header>
 							<li>Working controls</li>
@@ -79,14 +129,22 @@
 							<li>Smooth out image rendering on page load</li>
 							<li>Create documentation for settings</li>
 							<li>Creating a test suite</li>
+							<li>Reducing queries by using properties instead of methods</li>
+							<li>Create loading / fade in</li>
+							<li>Doesn't start until all images loaded</li>
+							<li>Implement settings</li>
+							<li>Add autoPlay setting</li>
+							<li>Pull out plugin code, minimalize, and package it</li>
+							<li>Create a downloadable template</li>
 						</ul>
 					</div>
 				</section>
 				<section>
-					<header class="title">
+					<header class="title pink">
 						<h3>Version 0.1</h3>
 					</header>
 					<div class="body">
+						<p class="date">11/10/2017</p>
 						<ul class="complete">
 							<header>Complete</header>
 							<li>Auto play</li>

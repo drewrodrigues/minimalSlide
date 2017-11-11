@@ -6,17 +6,22 @@
 	font-family: 'Quicksand', sans-serif;
 }
 
+body {
+	background-color: #161711;
+}
+
 /* BASE */
 .container {
 	max-width: 1000px;
 	margin: 0 auto;
+	background-color: #272822;
 }
 
 /* NAVBAR */
 nav {
 	width: 100%;
 	color: #dcdcdc;
-	padding: 10px;
+	padding: 20px;
 }
 
 #logo {
@@ -33,7 +38,40 @@ nav {
 	background-color: rgba(0,0,0,0.3);
 }
 
+/* SLIDES */
+.mSSlideContent h1 {
+	color: white;
+	text-align: center;
+	margin-top: 150px;
+	font-size: 45px;
+	font-weight: 700;
+	text-shadow: 0 0 10px black;
+}
+
 /* DOCUMENTATION */
+code {
+	margin-bottom: 10px;
+	padding: 0 20px 20px !important;
+}
+
+code span {
+	line-height: 1.5;
+}
+
+header.orange {
+	padding: 20px;
+	background-color: #FD971F;
+}
+
+header.pink {
+	padding: 20px;
+	background-color: #F92672;
+}
+
+header.blue {
+	padding: 20px;
+	background-color: #66D9EF;
+}
 
 /* VERSION */
 .versions .body:after {
@@ -52,15 +90,7 @@ nav {
 }
 
 .versions header {
-	background: #ccc;
-	color: white;
-	padding: 10px;
-	padding-left: 20px;
 	cursor: pointer;
-}
-
-.versions header:hover {
-	background-color: #bbb;
 }
 
 .versions ul {
@@ -68,28 +98,33 @@ nav {
 	float: left;
 }
 
-.versions li {
-	color: #333;
-	line-height: 1.5;
-}
-
 .complete > header {
 	padding: 10px;
-	background-color: green;
-	color: white;
+	background-color: #A6E22E;
 	display: inline-block;
 	border-radius: 10px;
+	margin-bottom: 10px;
 }
 
 .in-progress > header {
 	padding: 10px;
-	background-color: orange;
-	color: white;
+	background-color: #FD971F;
 	display: inline-block;
 	border-radius: 10px;
+	margin-bottom: 10px;
 }
 
 .versions li {
 	list-style-type: disc;
 	margin-left: 20px;
+	line-height: 1.5;
+	color: white;
+	font-size: 16px;
+	font-weight: 300;
+}
+
+.versions .date {
+	font-size: 12px;
+	color: #75715e;
+	margin-bottom: 10px;
 }
