@@ -130,6 +130,7 @@ var minimalSlide = {
 
   goToSlide: function(index) {
     self = this;
+    self.slides.finish();
     this.changeActiveSlideTo(index);
     this.activeSlide().fadeIn(1000, function() {
       self.slides.not('.active').hide();
