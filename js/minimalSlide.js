@@ -39,8 +39,7 @@ var minimalSlide = {
 	},
 
 	currentControlColor: function() {
-		return this.activeSlide()
-			.attr('controlColor');
+		return this.activeSlide.attr('controlColor');
 	},
 
 	changeSlideOnControlClick: function() {
@@ -71,23 +70,16 @@ var minimalSlide = {
 			.addClass('active')
 			.fadeIn();
 		this.slidesCount = this.slides.length;
-	},
-
-	activeSlide: function() {
-		return this.slides
-			.filter('.active');
-	},
-
-	activeSlideIndex: function() {
-		return this.activeSlide().index();
+		this.activeSlide = this.slides.filter('.active');
+		this.activeSlideIndex = this.activeSlide.index();
 	},
 
 	onFirstSlide: function() {
-		return this.activeSlideIndex() === 0;
+		return this.activeSlideIndex === 0;
 	},
 
 	onLastSlide: function() {
-		return this.activeSlideIndex() === this.slides.length - 1;
+		return this.activeSlideIndex === this.slides.length - 1;
 	},
 
 	updateActiveControl: function(index) {
@@ -103,7 +95,7 @@ var minimalSlide = {
 		if (this.onLastSlide()) {
 			this.goToSlide(0);
 		} else {
-			this.goToSlide(this.activeSlideIndex() + 1);
+			this.goToSlide(this.activeSlideIndex + 1);
 		}
 	},
 
@@ -132,17 +124,16 @@ var minimalSlide = {
 		self = this;
 		self.slides.finish();
 		this.changeActiveSlideTo(index);
-		this.activeSlide().fadeIn(1000, function() {
+		this.activeSlide.fadeIn(1000, function() {
 			self.slides.not('.active').hide();
 		});
 		this.updateActiveControl(index);
 	},
 
 	changeActiveSlideTo: function(index) {
-		this.slides
-			.removeClass('active')
-			.eq(index)
-			.addClass('active');
+		this.activeSlide.removeClass('active');
+		this.activeSlide = this.slides.eq(index).addClass('active');
+		this.activeSlideIndex = index;
 	},
 
 	setup: function() {
