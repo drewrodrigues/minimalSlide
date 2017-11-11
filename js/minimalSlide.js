@@ -22,11 +22,12 @@ var minimalSlide = {
 
   setupControls: function() {
     // add controls based on the amount of slides
-    // TODO: make the ul, and button automically added on container
-    var $ul = $('.mSControls');
+    var $container = $('.slide-container');
+    var $ul = $("<ul class='mSControls'><p class='mSToggle'>Pause</p></ul>"); 
     for (var i = 0; i < this.slidesCount; i++) {
       $ul.append('<li></li>');
     }
+    $container.append($ul);
     this.controls = $ul.children('li');
     this.controls
       .first()
