@@ -1,159 +1,165 @@
 *, html {
-    box-sizing: border-box;
-    font-family: sans-serif;
-    font-family: 'Quicksand', sans-serif;
+	box-sizing: border-box;
+	font-family: sans-serif;
+	font-family: 'Quicksand', sans-serif;
+}
+
+/* BASE */
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
 }
 
 /* NAVBAR */
 nav {
-  width: 100%;
-  color: #dcdcdc;
-  padding: 10px;
+	width: 100%;
+	color: #dcdcdc;
+	padding: 10px;
 }
 
 #logo {
-  font-size: 24px;
-  text-transform: uppercase;
+	font-size: 24px;
+	text-transform: uppercase;
 }
 
 #logo span {
-  font-weight: 300;
-  font-size: 18px;
-  display: inline-block;
-  border: 1px solid white;
-  padding: 5px;
-  background-color: rgba(0,0,0,0.3);
+	font-weight: 300;
+	font-size: 18px;
+	display: inline-block;
+	border: 1px solid white;
+	padding: 5px;
+	background-color: rgba(0,0,0,0.3);
 }
 
 /* SLIDE CONTAINER */
 .slide-container {
-  text-align: center;
+	text-align: center;
 }
 
 /* SECTIONS */
 .mS {
-  color: white;
-  padding: 50px 20px;
-  z-index: -1;
+	color: white;
+	padding: 50px 20px;
+	z-index: -1;
 }
 
 .mS.active {
-  z-index: 0;
+	z-index: 0;
 }
 
 h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
-  font-weight: 700;
+	font-size: 36px;
+	margin-bottom: 10px;
+	font-weight: 700;
 }
 
 p {
-  font-size: 20px;
-  line-height: 1.5;
-  max-width: 500px;
-  margin: 0 auto;
+	font-size: 20px;
+	line-height: 1.5;
+	max-width: 500px;
+	margin: 0 auto;
 }
 
 /* CONTROLS */
 .mSControls {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    padding: 5px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	padding: 5px;
 }
 
 .mSToggle {
-  color: white;
-  margin-bottom: 10px;
-  font-size: 12px;
-  cursor: pointer;
+	color: white;
+	margin-bottom: 10px;
+	font-size: 12px;
+	cursor: pointer;
 }
 
 .mSToggle:hover {
-  color: #ddd;
-  text-decoration: underline;
+	color: #ddd;
+	text-decoration: underline;
 }
 
 .mSControls li {
-  width: 25px;
-  height: 25px;
-  margin: 0 5px 10px;
-  display: inline-block;
-  border-radius: 50%;
-  background-color: white;
-  cursor: pointer;
+	width: 25px;
+	height: 25px;
+	margin: 0 5px 10px;
+	display: inline-block;
+	border-radius: 50%;
+	background-color: white;
+	cursor: pointer;
 }
 
 .mSControls li:hover {
-  background-color: #ddd;
+	background-color: #ddd;
 }
 
 .mSControls .control-active {
-  background-color: green;
+	background-color: green;
 }
 
 .mSControls .control-active:hover {
-  background-color: darkgreen;
+	background-color: darkgreen;
 }
 
 /* DOCUMENTATION */
 
 .documentation .body:after {
-  clear: left;
-  content: '';
-  display: table;
+	clear: left;
+	content: '';
+	display: table;
 }
 
 .documentation .body {
-  padding: 20px;
+	padding: 20px;
 }
 
 .documentation .indicator {
-  float: right;
-  font-weight: 700;
+	float: right;
+	font-weight: 700;
 }
 
 .documentation header {
-  background: #ccc;
-  color: white;
-  padding: 10px;
-  padding-left: 20px;
-  cursor: pointer;
+	background: #ccc;
+	color: white;
+	padding: 10px;
+	padding-left: 20px;
+	cursor: pointer;
 }
 
 .documentation header:hover {
-  background-color: #bbb;
+	background-color: #bbb;
 }
 
 .documentation ul {
-  width: 50%;
-  float: left;
+	width: 50%;
+	float: left;
 }
 
 .documentation li {
-  color: #333;
-  line-height: 1.5;
+	color: #333;
+	line-height: 1.5;
 }
 
 .complete > header {
-  padding: 10px;
-  background-color: green;
-  color: white;
-  display: inline-block;
-  border-radius: 10px;
+	padding: 10px;
+	background-color: green;
+	color: white;
+	display: inline-block;
+	border-radius: 10px;
 }
 
 .in-progress > header {
-  padding: 10px;
-  background-color: orange;
-  color: white;
-  display: inline-block;
-  border-radius: 10px;
+	padding: 10px;
+	background-color: orange;
+	color: white;
+	display: inline-block;
+	border-radius: 10px;
 }
 
 .documentation li {
-  list-style-type: disc;
-  margin-left: 20px;
+	list-style-type: disc;
+	margin-left: 20px;
 }
