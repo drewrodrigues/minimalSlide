@@ -1,12 +1,14 @@
+/* css/minimalSlide.css */
+
 /* SLIDE CONTAINER */
-.slide-container {
+.mSContainer {
 	width: 100%;
 	height: 500px;
 	position: relative;
 }
 
 /* SECTIONS */
-.mS {
+.mSSlide {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -15,7 +17,13 @@
 	overflow: hidden;
 }
 
-.slide-image {
+.mSSlide {
+	z-index: -1;
+}
+.mSSlide.active {
+	z-index: 0;
+}
+.mSSlideImage {
 	width: 100%;
 	z-index: -10;
 	position: absolute;

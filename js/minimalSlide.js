@@ -22,7 +22,7 @@ var minimalSlide = {
 
 	setupControls: function() {
 		// add controls based on the amount of slides
-		var $container = $('.slide-container');
+		var $container = $('.mSContainer');
 		var $ul = $("<ul class='mSControls'><p class='mSToggle'>Pause</p></ul>"); 
 		for (var i = 0; i < this.slidesCount; i++) {
 			$ul.append('<li></li>');
@@ -64,7 +64,7 @@ var minimalSlide = {
 	},
 
 	setupSlides: function() {
-		this.slides = $('.mS');
+		this.slides = $('.mSSlide');
 		this.slides
 			.hide()
 			.first()
