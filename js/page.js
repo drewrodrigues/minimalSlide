@@ -14,3 +14,5 @@ $('.documentation .title').on('click', function() {
 		$indicator.text('+');
 	}
 });
+
+hljs.initHighlightingOnLoad();
